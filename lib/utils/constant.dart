@@ -1,4 +1,5 @@
 
-import 'dart:ui';
 
-
+enum TextFormFieldType{
+  PHONE,PASSWORD,EMAIL
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20.046" viewBox="0 0 21 20.046">
+  <g id="loading-loader-svgrepo-com" transform="translate(0 -11.636)">
+    <path id="Path_10145" data-name="Path 10145" d="M4.773,221.091H.955a.955.955,0,0,0,0,1.909H4.773a.955.955,0,0,0,0-1.909Z" transform="translate(0 -200.864)" fill="#757575"/>
+    <path id="Path_10146" data-name="Path 10146" d="M377.136,221.091h-3.818a.955.955,0,1,0,0,1.909h3.818a.955.955,0,0,0,0-1.909Z" transform="translate(-357.09 -200.864)" fill="#757575"/>
+    <path id="Path_10147" data-name="Path 10147" d="M71.143,320.108l-2.7,2.7a.955.955,0,0,0,1.35,1.35l2.7-2.7a.955.955,0,1,0-1.35-1.35Z" transform="translate(-65.368 -295.552)" fill="#757575"/>
+    <g id="Group_13027" data-name="Group 13027" transform="translate(9.545 11.636)">
+      <path id="Path_10148" data-name="Path 10148" d="M233.682,11.636a.955.955,0,0,0-.955.955V14.5a.955.955,0,0,0,1.909,0V12.591A.955.955,0,0,0,233.682,11.636Z" transform="translate(-232.727 -11.636)" fill="#757575"/>
+      <path id="Path_10149" data-name="Path 10149" d="M334.443,56.807l-2.7,2.7a.955.955,0,1,0,1.35,1.35l2.7-2.7a.955.955,0,1,0-1.35-1.35Z" transform="translate(-327.414 -54.686)" fill="#757575"/>
+    </g>
+    <path id="Path_10150" data-name="Path 10150" d="M233.682,360.727a.955.955,0,0,0-.955.955V365.5a.955.955,0,0,0,1.909,0v-3.818A.955.955,0,0,0,233.682,360.727Z" transform="translate(-223.182 -334.773)" fill="#757575"/>
+    <path id="Path_10151" data-name="Path 10151" d="M333.093,320.108a.955.955,0,1,0-1.35,1.35l2.7,2.7a.955.955,0,1,0,1.35-1.35Z" transform="translate(-317.868 -295.552)" fill="#757575"/>
+  </g>
+</svg>

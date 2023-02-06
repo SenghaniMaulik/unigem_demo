@@ -17,6 +17,10 @@ EdgeInsetsGeometry addScreenPadding({double padding=15}){
   return EdgeInsets.all(padding);
 }
 
+EdgeInsetsGeometry addSideMargin({double margin=15}){
+  return EdgeInsets.all(margin);
+}
+
 class AppLayout {
   static getSize(BuildContext context) {
     return MediaQuery.of(context).size;
