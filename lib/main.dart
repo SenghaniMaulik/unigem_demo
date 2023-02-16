@@ -1,16 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:unigem_demo/screens/enter_otp/enter_otp_screen.dart';
-import 'package:unigem_demo/screens/select_language/select_language_screen.dart';
-import 'package:unigem_demo/screens/sign_in/sign_in_screen.dart';
-import 'package:unigem_demo/screens/verify_your_mobile/verify_your_mobile_screen.dart';
+import 'package:unigem_demo/src/features/authentication/screens/enter_otp/enter_otp_screen.dart';
+import 'package:unigem_demo/src/features/authentication/screens/select_language/select_language_screen.dart';
+import 'package:unigem_demo/src/features/authentication/screens/sign_in/sign_in_screen.dart';
+import 'package:unigem_demo/src/features/authentication/screens/verify_your_mobile/verify_your_mobile_screen.dart';
 import 'package:unigem_demo/theme/main_theme_constants.dart';
 import 'package:unigem_demo/theme/theme_manager.dart';
 
+import 'firebase_options.dart';
 import 'locale/LanguageProvider.dart';
+import 'src/repository/repository/authentication_repository/authentication_repository.dart';
+import 'src/repository/repository/user_repository/user_repository.dart';
+
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((value) {
+    Get.put(AuthenticationRepository());
+    Get.put(UserRepository());
+  });
   runApp(const MyApp());
 }
 
@@ -36,7 +48,7 @@ class MyMaterialApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       /*localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -47,13 +59,24 @@ class MyMaterialApp extends StatelessWidget {
         Locale('en'), // English
         Locale('hi'), // Hindi
       ],*/
-      locale: Provider.of<LanguageProvider>(context).currentLocale,
+      locale:  Get.deviceLocale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: Provider.of<ThemeManager>(context).themeMode,
-      initialRoute: EnterOTPScreen.id,
+      color: Colors.white,
+      /*home: Container(
+        color: Colors.white,
+        child: Center(
+          child: Container(
+            height: 100,
+            width: 100,
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      )*/
+      initialRoute: SelectLanguageScreen.id,
       routes: {
         SignInScreen.id: (context) => const SignInScreen(),
         SelectLanguageScreen.id: (context) => SelectLanguageScreen(),

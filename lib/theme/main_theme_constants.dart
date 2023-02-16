@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unigem_demo/theme/sub_theme_constants.dart';
 
-import '../utils/app_styles.dart';
+import '../src/constants/app_styles.dart';
 
 const COLOR_PRIMARY = AppColor.primaryColor;
 const COLOR_ACCENT = AppColor.secondaryColor;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_styles.dart';
+import '../src/constants/app_styles.dart';
 
 var _commonTextStyle =
 const TextStyle(color: AppColor.blackText, );

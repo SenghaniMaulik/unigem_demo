@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:unigem_demo/src/utils/preferance_helper.dart';
 
-import '../utils/preferance_helper.dart';
 import 'language.dart';
 
 class LanguageProvider with ChangeNotifier {
