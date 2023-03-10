@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,6 +66,8 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
           iconData = Icons.person;
         }
         break;
+      default:
+        textInputType = TextInputType.text;
     }
 
     return TextFormField(

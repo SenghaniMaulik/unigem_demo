@@ -15,16 +15,11 @@ class AppColor {
   static const Color bubbleHin =   Color(0xffFFC87F);
   static const Color grayTextFieldBorder =   Color(0xffC2C2C2);
   static const Color redLight =   Color(0xffDE5757);
-
-
-
-
 }
 
 
 TextStyle mTextStyle35 = TextStyle(
   fontSize: 35,
-
 );
 
 

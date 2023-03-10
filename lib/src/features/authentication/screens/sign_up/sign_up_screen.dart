@@ -92,7 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     fieldType: TextFormFieldType.NAME,
                                     labelText: appLocalization.full_name,
                                     validation: Validations(context)
-                                        .getNameValidation(),
+                                        .getNameValidation(field:appLocalization.full_name ),
                                     textEditingController: controller.fullName,
                                   ),
                                 ],

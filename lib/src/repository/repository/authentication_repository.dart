@@ -71,6 +71,8 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+ User? getUser()  =>  firebaseUser.value;
+
   Future<void> logout() async => await _auth.signOut();
 
   Future<void> phoneAuthentication(String phoneNo) async {

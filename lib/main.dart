@@ -12,8 +12,9 @@ import 'package:unigem_demo/theme/theme_manager.dart';
 
 import 'firebase_options.dart';
 import 'locale/LanguageProvider.dart';
-import 'src/repository/repository/authentication_repository/authentication_repository.dart';
-import 'src/repository/repository/user_repository/user_repository.dart';
+import 'src/repository/repository/authentication_repository.dart';
+import 'src/repository/repository/reclaimer_repository.dart';
+import 'src/repository/repository/user_repository.dart';
 
 
 void main() {
@@ -22,6 +23,7 @@ void main() {
       .then((value) {
     Get.put(AuthenticationRepository());
     Get.put(UserRepository());
+    Get.put(ReclaimerRepository());
   });
   runApp(const MyApp());
 }
@@ -66,7 +68,7 @@ class MyMaterialApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: Provider.of<ThemeManager>(context).themeMode,
       color: Colors.white,
-      /*home: Container(
+      home: Container(
         color: Colors.white,
         child: Center(
           child: Container(
@@ -75,8 +77,8 @@ class MyMaterialApp extends StatelessWidget {
             child: CircularProgressIndicator(),
           ),
         ),
-      )*/
-      initialRoute: SelectLanguageScreen.id,
+      )
+     /* initialRoute: SelectLanguageScreen.id*/,
       routes: {
         SignInScreen.id: (context) => const SignInScreen(),
         SelectLanguageScreen.id: (context) => SelectLanguageScreen(),

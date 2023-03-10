@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:unigem_demo/src/features/authentication/models/user_model.dart';
-import 'package:unigem_demo/src/repository/repository/authentication_repository/authentication_repository.dart';
-import 'package:unigem_demo/src/repository/repository/user_repository/user_repository.dart';
+import 'package:unigem_demo/src/repository/repository/authentication_repository.dart';
+import 'package:unigem_demo/src/repository/repository/user_repository.dart';
 import 'package:unigem_demo/src/utils/snack_bar.dart';
 
 

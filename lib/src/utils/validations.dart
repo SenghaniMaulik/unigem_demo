@@ -9,17 +9,32 @@ class Validations {
     appLocalization = AppLocalizations.of(context)!;
   }
 
-  getPhoneValidation() {
+  getPhoneValidation({bool isRequired = true}) {
     validatePhone(value) {
-      if (value == null || value.isEmpty) {
+      print(
+          "getPhoneValidation =$isRequired ${value == null || value.isEmpty}");
+      if (isRequired && value.isEmpty) {
         return appLocalization.enter_mobile;
-      } else if (value.length < 10) {
+      } else if (!value.isEmpty && value.length < 10) {
         return appLocalization.enter_valid_mobile;
       }
       return null;
     }
-
     return validatePhone;
+  }
+
+  getNumberValidation(
+      {bool isRequired = true, int length = 5, required String field}) {
+    validateNumber(value) {
+      if (isRequired &&  value.isEmpty) {
+        return appLocalization.please_enter_(field.toLowerCase());
+      } else if (!value.isEmpty &&  value.length > length) {
+        return appLocalization.please_enter_valid_(field.toLowerCase());
+      }
+      return null;
+    }
+
+    return validateNumber;
   }
 
   getPasswordValidation() {
@@ -35,30 +50,42 @@ class Validations {
     return validatePassword;
   }
 
-  getEmailValidation() {
+  getEmailValidation({bool isRequired = true}) {
     validateEmail(value) {
       final bool emailValid = RegExp(
               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(value);
 
-      if (value == null || value.isEmpty) {
+      if (isRequired && value.isEmpty) {
         return appLocalization.enter_email;
-      } else if (!emailValid) {
+      } else if (isRequired && !value.isEmpty && !emailValid) {
         return appLocalization.enter_valid_email;
       }
       return null;
     }
+
     return validateEmail;
   }
 
-  getNameValidation() {
-    validateEmail(value) {
-
-      if (value == null || value.isEmpty) {
-        return appLocalization.enter_name;
+  getNameValidation({bool isRequired = true, required String field}) {
+    validateName(value) {
+      if (isRequired &&  value.isEmpty) {
+        return appLocalization.please_enter_(field.toLowerCase());
       }
       return null;
     }
-    return validateEmail;
+
+    return validateName;
+  }
+
+  getGeneralValidation({bool isRequired = true, required String field}) {
+    validateGeneral(value) {
+      if (isRequired && value==null || value.isEmpty) {
+        return appLocalization.please_enter_(field.toLowerCase());
+      }
+      return null;
+    }
+
+    return validateGeneral;
   }
 }
